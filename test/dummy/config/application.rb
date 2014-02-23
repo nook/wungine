@@ -1,6 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "action_controller/railtie"
+require "action_view/railtie"
+require "action_mailer/railtie"
+require "rails/test_unit/railtie"
+require "sprockets/railtie"
+# require "active_resource/railtie"
+require "rails/rack"
 
 Bundler.require(*Rails.groups)
 require "wungine"
