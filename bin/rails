@@ -4,5 +4,12 @@
 ENGINE_ROOT = File.expand_path('../..', __FILE__)
 ENGINE_PATH = File.expand_path('../../lib/wungine/engine', __FILE__)
 
-require 'rails/all'
+
+require "action_controller/railtie"
+require "action_view/railtie"
+require "action_mailer/railtie"
+require "rails/test_unit/railtie"
+require "sprockets/railtie"
+# require "active_resource/railtie"
+require "rails/rack"
 require 'rails/engine/commands'

@@ -14,21 +14,19 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-APP_RAKEFILE = File.expand_path("../test/dummy/Rakefile", __FILE__)
+APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
 load 'rails/tasks/engine.rake'
-
-
 
 Bundler::GemHelper.install_tasks
 
-require 'rake/testtask'
+Dir[File.join(File.dirname(__FILE__), 'tasks/**/*.rake')].each { |f| load f }
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+desc "Run all specs in spec directory"
+RSpec::Core::RakeTask.new(:precommit) do |t|
+  t.pattern = "spec/**/*_spec.rb"
 end
 
-
-task default: :test
+task default: :precommit
