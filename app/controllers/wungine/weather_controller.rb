@@ -1,8 +1,7 @@
-require_dependency "wungine/application_controller"
-require 'wungine/wunderground'
-
 module Wungine
   class WeatherController < ApplicationController
+    layout "application"
+
     def index
     end
 
