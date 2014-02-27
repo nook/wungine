@@ -135,7 +135,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
   capybara
   factory_girl_rails
   pry

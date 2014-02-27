@@ -1,4 +1,4 @@
-module Wungine
-  class ApplicationController < ActionController::Base
-  end
+class Wungine::ApplicationController < ApplicationController
+  layout "application"
+
 end
