@@ -21,3 +21,4 @@ config/initializers/secret_token.rb
 tags
 gitSHA.dat
 spec/dummy/log
+*.gem

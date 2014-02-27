@@ -1,8 +1,8 @@
 module Wungine
   class WeatherController < ApplicationController
-    layout "application"
 
     def index
+
     end
 
     def show
