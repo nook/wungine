@@ -18,5 +18,12 @@ module Wungine
       raw_mash = Hashie::Mash.new(json_string)
       Wungine::WunderMap.map_raw_weather(raw_mash)
     end
+
+    def self.get_by_zip(zip)
+      options = DEFAULT_OPTIONS
+      f = open(options[:endpoint] + "/" + options[:key] + "/conditions/q/" + zip +".json")
+      json_string = JSON.parse(f.read)
+      raw_mash = Hashie::Mash.new(json_string)
+    end
   end
 end
