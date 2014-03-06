@@ -11,11 +11,7 @@ module Wungine
     property :icon
 
     def get_online_rental
-      if temp_c < 1
-        return true
-      else
-        return false
-      end
+      temp_c < 1 ? true : false
     end
 
   end
